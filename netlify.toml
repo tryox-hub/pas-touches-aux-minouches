@@ -1,6 +1,6 @@
 [build]
   publish = "."
-  command = "node generate-json.js"
+  command = "mkdir -p api && node generate-json.js || (echo '[]' > api/chats.json && echo '[]' > api/chatons.json)"
 
 [[redirects]]
   from = "/*"
