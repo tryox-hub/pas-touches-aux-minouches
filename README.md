@@ -19,10 +19,6 @@ Site web de l'association **Pas touche aux Minouches** - Protection féline dans
 - **Hébergement** : Netlify
 - **Versionning** : GitHub
 
-## 📦 Installation
-
-Voir le fichier [GUIDE-INSTALLATION.md](GUIDE-INSTALLATION.md) pour les instructions complètes.
-
 ## 📄 Mentions légales
 
 **Association** : Pas touche aux Minouches  
@@ -34,8 +30,7 @@ Association loi 1901 - Protection animale félins
 
 ## 🔗 Liens
 
-- Site : https://TON-SITE.netlify.app
-- Admin : https://TON-SITE.netlify.app/admin/
+- Site : https://E.netlify.app
 - Facebook : [Lien à ajouter]
 - Instagram : [Lien à ajouter]
 
