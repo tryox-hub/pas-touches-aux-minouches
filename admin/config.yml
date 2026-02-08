@@ -12,27 +12,123 @@ publish_mode: editorial_workflow
 
 collections:
   - name: "chats"
-    label: "Chats adultes"
+    label: "🐱 Chats adultes"
+    label_singular: "Chat adulte"
     folder: "_chats"
     create: true
     slug: "{{slug}}"
+    editor:
+      preview: false
     fields:
-      - { label: "Nom", name: "nom", widget: "string" }
-      - { label: "Photo", name: "photo", widget: "image" }
-      - { label: "Âge", name: "age", widget: "string", hint: "Ex: 2 ans, 6 mois..." }
-      - { label: "Sexe", name: "sexe", widget: "select", options: ["Mâle", "Femelle"] }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - label: "📸 Souvenirs & Portraits"
+        name: "photos"
+        widget: "object"
+        fields:
+          - { label: "Photo principale", name: "photo_principale", widget: "image", required: true }
+          - { label: "Photo 2 (optionnelle)", name: "photo_2", widget: "image", required: false }
+          - { label: "Photo 3 (optionnelle)", name: "photo_3", widget: "image", required: false }
+
+      - label: "🎯 Qui suis-je ?"
+        name: "identite"
+        widget: "object"
+        fields:
+          - { label: "Mon Petit Nom", name: "nom", widget: "string", required: true }
+          - { label: "Ma Race / Type", name: "race", widget: "string", default: "Européen (Gouttière)" }
+          - { label: "Mon Âge (nombre)", name: "age_nombre", widget: "number", min: 0, max: 20, required: true }
+          - { label: "Unité d'âge", name: "age_unite", widget: "select", options: ["Ans", "Mois", "Semaines"], default: "Ans" }
+          - { label: "Sexe", name: "sexe", widget: "select", options: ["Petit Monsieur", "Petite Dame"], required: true }
+
+      - label: "🎨 Mon Caractère"
+        name: "caractere"
+        widget: "object"
+        fields:
+          - label: "Mes traits de caractère"
+            name: "traits"
+            widget: "select"
+            multiple: true
+            options:
+              - "Joueur"
+              - "Câlin"
+              - "Calme"
+              - "Timide"
+              - "Curieux"
+              - "Indépendant"
+              - "Bavard"
+              - "Sociable"
+              - "Actif"
+              - "Doux"
+          - { label: "Ok Chiens ?", name: "ok_chiens", widget: "boolean", default: false }
+          - { label: "Ok Enfants ?", name: "ok_enfants", widget: "boolean", default: false }
+
+      - label: "🏥 Côté Santé"
+        name: "sante"
+        widget: "object"
+        fields:
+          - { label: "Stérilisé", name: "sterilise", widget: "boolean", default: true }
+          - { label: "Pucé", name: "puce", widget: "boolean", default: true }
+          - { label: "Vacciné", name: "vaccine", widget: "boolean", default: false }
+          - { label: "Notes importantes / Besoins spéciaux", name: "notes", widget: "text", required: false, hint: "Raconte-nous son histoire médicale..." }
+
+      - { label: "📝 Description complète", name: "description", widget: "text", required: false, hint: "Une belle description pour présenter le minouche" }
       - { label: "Est adopté ?", name: "adopte", widget: "boolean", default: false }
 
   - name: "chatons"
-    label: "Chatons"
+    label: "🐾 Chatons"
+    label_singular: "Chaton"
     folder: "_chatons"
     create: true
     slug: "{{slug}}"
+    editor:
+      preview: false
     fields:
-      - { label: "Nom", name: "nom", widget: "string" }
-      - { label: "Photo", name: "photo", widget: "image" }
-      - { label: "Âge", name: "age", widget: "string", hint: "Ex: 3 mois, 8 semaines..." }
-      - { label: "Sexe", name: "sexe", widget: "select", options: ["Mâle", "Femelle"] }
-      - { label: "Description", name: "description", widget: "text", required: false }
+      - label: "📸 Souvenirs & Portraits"
+        name: "photos"
+        widget: "object"
+        fields:
+          - { label: "Photo principale", name: "photo_principale", widget: "image", required: true }
+          - { label: "Photo 2 (optionnelle)", name: "photo_2", widget: "image", required: false }
+          - { label: "Photo 3 (optionnelle)", name: "photo_3", widget: "image", required: false }
+
+      - label: "🎯 Qui suis-je ?"
+        name: "identite"
+        widget: "object"
+        fields:
+          - { label: "Mon Petit Nom", name: "nom", widget: "string", required: true }
+          - { label: "Ma Race / Type", name: "race", widget: "string", default: "Européen (Gouttière)" }
+          - { label: "Mon Âge (nombre)", name: "age_nombre", widget: "number", min: 0, max: 12, required: true }
+          - { label: "Unité d'âge", name: "age_unite", widget: "select", options: ["Mois", "Semaines"], default: "Mois" }
+          - { label: "Sexe", name: "sexe", widget: "select", options: ["Petit Monsieur", "Petite Dame"], required: true }
+
+      - label: "🎨 Mon Caractère"
+        name: "caractere"
+        widget: "object"
+        fields:
+          - label: "Mes traits de caractère"
+            name: "traits"
+            widget: "select"
+            multiple: true
+            options:
+              - "Joueur"
+              - "Câlin"
+              - "Calme"
+              - "Timide"
+              - "Curieux"
+              - "Indépendant"
+              - "Bavard"
+              - "Sociable"
+              - "Actif"
+              - "Doux"
+          - { label: "Ok Chiens ?", name: "ok_chiens", widget: "boolean", default: false }
+          - { label: "Ok Enfants ?", name: "ok_enfants", widget: "boolean", default: true }
+
+      - label: "🏥 Côté Santé"
+        name: "sante"
+        widget: "object"
+        fields:
+          - { label: "Stérilisé", name: "sterilise", widget: "boolean", default: false }
+          - { label: "Pucé", name: "puce", widget: "boolean", default: true }
+          - { label: "Vacciné", name: "vaccine", widget: "boolean", default: false }
+          - { label: "Notes importantes / Besoins spéciaux", name: "notes", widget: "text", required: false, hint: "Raconte-nous son histoire médicale..." }
+
+      - { label: "📝 Description complète", name: "description", widget: "text", required: false, hint: "Une belle description pour présenter le minouche" }
       - { label: "Est adopté ?", name: "adopte", widget: "boolean", default: false }
