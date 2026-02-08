@@ -5,8 +5,8 @@ backend:
 media_library:
   name: cloudinary
   config:
-    cloud_name: TON_CLOUD_NAME  # À remplacer par ton nom Cloudinary
-    api_key: TON_API_KEY        # À remplacer par ta clé API Cloudinary
+    cloud_name: dxpw333bo  # À remplacer par ton nom Cloudinary
+    api_key: 948742952497674        # À remplacer par ta clé API Cloudinary
 
 publish_mode: editorial_workflow
 
