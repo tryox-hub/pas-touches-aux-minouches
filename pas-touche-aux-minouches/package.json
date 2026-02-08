@@ -1,9 +1,0 @@
-{
-  "name": "pas-touche-aux-minouches",
-  "version": "1.0.0",
-  "description": "Site de l'association Pas touche aux Minouches",
-  "scripts": {
-    "build": "node generate-json.js"
-  },
-  "dependencies": {}
-}
