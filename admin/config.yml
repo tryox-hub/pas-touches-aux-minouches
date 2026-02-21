@@ -6,8 +6,8 @@ backend:
 media_library:
   name: cloudinary
   config:
-    cloud_name: dxpw333bo  # Remplace par ton cloud name
-    api_key: dxpw333bo        # Remplace par ta clé API
+    cloud_name: TON_CLOUD_NAME  # Remplace par ton cloud name
+    api_key: TON_API_KEY        # Remplace par ta clé API
     output_filename_only: false
 
 # Alternative : Si tu préfères uploader directement sans Cloudinary
